@@ -1,10 +1,27 @@
 /* 문자열 순회 */
-let s = "토마토123"
+let s = "토마토123" ;
+let st = "" ;
+for (let i = s.length - 1; i >= 0; i--) {
+    st += s[i] ;
+}
+console.log(st);
+if (s == st) console.log("회문");
+else console.log("비회문");
 
 /* 실습 : 회문인지 판별 */
- 
+st = s.split("").reverse().join(""); //글자를 쪼개고 뒤집고 붙혀서 만듬. 배열을 이용. split 하게되면 배열의 형태로 쪼개어짐.
+console.log(st);
+if (s == st) console.log("회문");
+else console.log("비회문");
+
 /* 실습 : 문자열에 포함된 숫자의 합구하기*/
- 
+let sum = 0 ;
+st = s.split("") ;
+for (let n of st) {
+    if (!isNaN(n)) sum = sum + parseInt(n);
+}
+console.log(sum);
+
 /* 여러줄 문자열 저장 */
 s = `Ecma International의 프로토타입 기반의 프로그래밍 언어로, 스크립트 언어에 해당된다.
 특수한 목적이 아닌 이상 모든 웹 브라우저에 인터프리터가 내장되어 있다. 
